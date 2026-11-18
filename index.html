@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOCAMA Ingénierie – Des solutions durables pour l'eau et l'environnement</title>
+  <meta name="description" content="SOCAMA, l'ingénierie de proximité : des solutions durables pour l'eau et l'environnement.">
+
+  <!-- Polices préchargées (évite le "saut" de texte au chargement) -->
+  <link rel="preload" href="fonts/Gilroy-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Gilroy-Medium.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE (logo + menu) — "sticky" (fixé en haut de l'écran)
+       - En haut de page : transparent, par-dessus la hero.
+       - Dès qu'on défile (.is-scrolled, ajoutée en JS) : barre flottante
+         en verre dépoli, logo en couleur, liens bleus, barre de progression.
+       - Il reste toujours visible.
+       ========================================================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header__bar">
+
+      <!-- 2 versions du logo : blanche (sur la hero) et couleur (barre flottante) -->
+      <a href="index.html" class="header__logo" aria-label="SOCAMA Ingénierie – Accueil">
+        <img class="header__logo-white" src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+        <img class="header__logo-color" src="images/logo-socama-couleur.svg" alt="" aria-hidden="true" width="287" height="45">
+      </a>
+
+      <!-- Bouton menu : visible uniquement sur mobile/tablette -->
+      <button class="header__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menu principal">
+        <!-- Menu calé sur l'arborescence du site.
+             Chaque menu = volet pleine largeur (.nav__item--mega) :
+             "Missions" et "Socama" = mêmes volets.
+             Ouverture au survol / focus (CSS) ou au clic (JS, bloc "Menus déroulants du header").
+             Sur mobile : accordéons dans le menu plein écran. -->
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-domaines">
+              Nos domaines
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega" id="menu-domaines">
+              <ul class="mega__list">
+                <li>
+                  <a href="eaux-pluviales.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eaux-pluviales.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Gestion et maîtrise des eaux pluviales</span>
+                      <span class="mega__text">Modélisation du ruissellement et ouvrages</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="paysages-vrd.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><img src="images/icones/paysages-vrd.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Paysages &amp; VRD</span>
+                      <span class="mega__text">Espaces publics, voirie et paysage</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assainissement.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/assainissement.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assainissement</span>
+                      <span class="mega__text">Collecte, pompage et traitement des eaux usées</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="eau-potable.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><img src="images/icones/eau-potable.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Eau potable</span>
+                      <span class="mega__text">Captage, potabilisation, stockage, distribution</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="milieux-aquatiques.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/milieux-aquatiques.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Milieux aquatiques et continuité écologique</span>
+                      <span class="mega__text">GEMAPI, hydraulique fluviale, rivières</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="electrification-eclairage.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eclairage-public.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Électrification et éclairage public</span>
+                      <span class="mega__text">Réseaux BT/HTA, éclairage, télécoms</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Un projet qui mêle plusieurs domaines&nbsp;?</p>
+                <p class="mega__aside-text">Réseaux humides et secs, voirie, paysage : nos équipes coordonnent l’ensemble.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-missions">
+              Missions
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-missions">
+              <ul class="mega__list">
+                <li>
+                  <a href="maitrise-oeuvre.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Maîtrise d’œuvre</span>
+                      <span class="mega__text">De la conception à la réception des travaux</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assistance-maitrise-ouvrage.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/assistance-maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assistance à maîtrise d’ouvrage</span>
+                      <span class="mega__text">Aide à la décision et suivi de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="etude.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/etudes.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Étude</span>
+                      <span class="mega__text">Faisabilité, diagnostics, dossiers réglementaires</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Du diagnostic au chantier</p>
+                <p class="mega__aside-text">Une même équipe vous accompagne à chaque étape, pour les collectivités comme pour le privé.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="references.html" class="nav__link">Références</a></li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-socama">
+              Socama
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-socama">
+              <ul class="mega__list mega__list--2">
+                <li>
+                  <a href="socama.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Le groupe SOCAMA</span>
+                      <span class="mega__text">Notre histoire, nos valeurs, notre équipe</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nos-agences.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Nos agences</span>
+                      <span class="mega__text">Au plus près de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ef-etudes.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">EF Études et agence</span>
+                      <span class="mega__text">Notre agence partenaire</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="engagement-rse.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Engagement / RSE</span>
+                      <span class="mega__text">Nos engagements responsables</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Plus de 60 ans d’ingénierie indépendante</p>
+                <p class="mega__aside-text">Une équipe pluridisciplinaire, au plus près des territoires.</p>
+                <a href="socama.html" class="btn btn--orange">Découvrir le groupe</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="carrieres.html" class="nav__link">Carrières</a></li>
+          <li><a href="socamag.html" class="nav__link">Soca’mag</a></li>
+        </ul>
+        <a href="#" class="btn btn--orange">Contact</a>
+
+        <!-- Coordonnées : visibles seulement dans le menu mobile -->
+        <div class="nav__infos">
+          <a href="tel:+33556340853" class="nav__info">05 56 34 08 53</a>
+          <a href="mailto:socama@socama.fr" class="nav__info">socama@socama.fr</a>
+          <a href="#" class="nav__social" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Barre de progression de lecture (largeur pilotée en JS) -->
+      <span class="header__progress" aria-hidden="true"></span>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO – page d'accueil
+         Fond bleu avec grand arrondi en bas à gauche,
+         titre à gauche, mosaïque de photos "pilules" à droite.
+         ========================================================= -->
+    <section class="hero">
+
+      <div class="container hero__content">
+        <h1 class="hero__title">
+          Des solutions<br> durables<br> pour l’eau et<br>
+          <span class="hero__highlight">l’environnement</span>
+        </h1>
+        <p class="hero__subtitle">SOCAMA, l’ingénierie de proximité</p>
+      </div>
+
+      <!-- Mosaïque de pilules : 9 emplacements numérotés (.hero__pill--1 à --9).
+           Chaque emplacement contient une carte à 2 faces :
+             .hero__pill > .hero__pill-inner > RECTO + .hero__pill-back (verso couleur)
+           Le RECTO est soit une photo (<img>), soit une pilule de couleur
+           (<span class="hero__pill-color hero__pill-color--jaune|--vert">).
+
+           Animation automatique (js/main.js) :
+           · data-swap : emplacement mobile — son recto (photo OU couleur) peut
+             s'échanger avec celui d'un autre emplacement data-swap.
+           · data-flip : photo déjà coupée au bord de l'écran — se retourne
+             simplement (elle ne peut pas changer de place).
+           Les photos sont des PNG transparents déjà découpés en pilule. -->
+      <div class="hero__visuals" aria-hidden="true">
+
+        <!-- 1 -->
+        <div class="hero__pill hero__pill--1" data-swap>
+          <div class="hero__pill-inner">
+            <img src="images/hero/hero-riviere-aerienne.png" alt="" width="387" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="hero__pill hero__pill--2" data-swap>
+          <div class="hero__pill-inner">
+            <img src="images/hero/hero-chantier-station.png" alt="" width="387" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 3 : photo coupée à droite -->
+        <div class="hero__pill hero__pill--3" data-flip>
+          <div class="hero__pill-inner">
+            <img class="hero__photo--seuil" src="images/hero/hero-seuil-riviere.png" alt="" width="290" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="hero__pill hero__pill--4" data-swap>
+          <div class="hero__pill-inner">
+            <img src="images/hero/hero-chateau-eau.png" alt="" width="387" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="hero__pill hero__pill--5" data-swap>
+          <div class="hero__pill-inner">
+            <span class="hero__pill-color hero__pill-color--jaune"></span>
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 6 : photo coupée à droite -->
+        <div class="hero__pill hero__pill--6" data-flip>
+          <div class="hero__pill-inner">
+            <img class="hero__photo--rue" src="images/hero/hero-rue.png" alt="" width="135" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 7 : dépasse à droite -->
+        <div class="hero__pill hero__pill--7" data-swap>
+          <div class="hero__pill-inner">
+            <span class="hero__pill-color hero__pill-color--vert"></span>
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="hero__pill hero__pill--8" data-swap>
+          <div class="hero__pill-inner">
+            <img src="images/hero/hero-lac.png" alt="" width="387" height="216">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+        <!-- 9 : photo coupée en bas -->
+        <div class="hero__pill hero__pill--9" data-flip>
+          <div class="hero__pill-inner">
+            <img src="images/hero/hero-canalisation.png" alt="" width="387" height="195">
+            <span class="hero__pill-back"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         INTRO + EXPERTISE
+         Texte de présentation en italique encadré par deux formes,
+         icône SOCAMA, puis titre de la section "Expertise".
+         Le plan technique à gauche est purement décoratif.
+         ========================================================= -->
+    <section class="intro">
+
+      <img class="intro__drawing" src="images/decor/plan-technique.png" alt="" aria-hidden="true" width="346" height="556">
+
+      <div class="container">
+
+        <div class="intro__text">
+          <img class="intro__shape intro__shape--verte" src="images/decor/forme-verte.svg" alt="" aria-hidden="true" width="99" height="99">
+
+          <p>
+            Bureau d’études indépendant depuis 1979, nous accompagnons les <strong>collectivités et acteurs privés</strong><br>
+            dans leurs projets d’aménagement urbain, d’environnement, d’eau et d’assainissement.
+          </p>
+          <p>
+            Présents à l’échelle nationale, <strong>nous concevons des solutions adaptées</strong> aux projets les plus complexes.
+          </p>
+
+          <img class="intro__shape intro__shape--bleue" src="images/decor/forme-bleue.svg" alt="" aria-hidden="true" width="99" height="99">
+        </div>
+
+        <!-- Icône SOCAMA dans un rond bleu -->
+        <div class="intro__icon">
+          <img src="images/icone-socama.svg" alt="" aria-hidden="true" width="57" height="50">
+        </div>
+
+        <!-- En-tête de la section Expertise (titre + sous-titre réutilisables) -->
+        <div class="section-head">
+          <h2 class="section-title">
+            <span class="text-orange">Notre expertise</span> aux services de tous vos projets !
+          </h2>
+          <p class="section-subtitle">
+            Nous façonnons durablement les territoires, en apportant <strong>une expertise technique</strong><br>
+            sur les infrastructures, les réseaux, les espaces publics et les enjeux environnementaux.
+          </p>
+        </div>
+
+        <!-- Cartes "Domaines d'expertise" (1 carte = 1 lien vers la page du domaine) -->
+        <ul class="expertise-list">
+          <li>
+            <a href="eau-potable.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/eau-potable.svg" alt="" width="83" height="95"></span>
+              <span class="expertise-card__label">Eau Potable</span>
+            </a>
+          </li>
+          <li>
+            <a href="milieux-aquatiques.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/milieux-aquatiques.svg" alt="" width="110" height="83"></span>
+              <span class="expertise-card__label">Milieux aquatiques<br> et continuité<br> écologique</span>
+            </a>
+          </li>
+          <li>
+            <a href="eaux-pluviales.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/eaux-pluviales.svg" alt="" width="95" height="96"></span>
+              <span class="expertise-card__label">Gestion et maîtrise<br> des eaux pluviales</span>
+            </a>
+          </li>
+          <li>
+            <a href="assainissement.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/assainissement.svg" alt="" width="100" height="100"></span>
+              <span class="expertise-card__label">Assainissement</span>
+            </a>
+          </li>
+          <li>
+            <a href="paysages-vrd.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/paysages-vrd.svg" alt="" width="99" height="97"></span>
+              <span class="expertise-card__label">Paysages &amp; VRD</span>
+            </a>
+          </li>
+          <li>
+            <a href="electrification-eclairage.html" class="expertise-card">
+              <span class="expertise-card__icon"><img src="images/icones/eclairage-public.svg" alt="" width="62" height="85"></span>
+              <span class="expertise-card__label">Électrification<br> et éclairage public</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="section-cta">
+          <a href="eau-potable.html" class="btn btn--orange btn--large">Découvrez nos domaines d’expertises</a>
+        </div>
+
+      </div>
+
+      <!-- Dessin de tuyauterie décoratif, en bas à droite.
+           Il passe derrière la section suivante (fond gris-bleu). -->
+      <img class="intro__pipes" src="images/decor/tuyauterie.png" alt="" aria-hidden="true" width="487" height="622">
+    </section>
+
+
+    <!-- =========================================================
+         MÉTHODE – "De la définition du besoin à la mise en œuvre"
+         Fond gris-bleu avec grand arrondi en haut à droite.
+         ========================================================= -->
+    <section class="methode">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-title">
+            De la définition du besoin <span class="text-orange">à la mise en œuvre</span>
+          </h2>
+          <p class="section-subtitle">
+            Experts des problématiques de l’eau, <strong>nous accompagnons les maîtres d’ouvrage</strong> dans la définition, la conception et le suivi de leurs projets,<br>
+            en apportant des solutions adaptées aux enjeux techniques, environnementaux et réglementaires.
+          </p>
+        </div>
+
+        <!-- Cartes "Métiers" : photo en forme de goutte qui dépasse en haut,
+             titre, puis liste à puces (puces = petites pilules orange) -->
+        <ul class="metier-list">
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/etudes.png" alt="Ingénieur consultant une tablette sur un chantier" width="172" height="225">
+            <h3 class="metier-card__title">Études</h3>
+            <ul class="metier-card__list">
+              <li>Études de faisabilité</li>
+              <li>Diagnostics &amp; schémas directeurs</li>
+              <li>Études hydrauliques et environnementales</li>
+              <li>Dossiers réglementaires</li>
+            </ul>
+            <div class="metier-card__cta">
+              <a href="etude.html" class="btn btn--orange">En savoir plus</a>
+            </div>
+          </li>
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/maitrise-oeuvre.png" alt="Deux ingénieurs travaillant sur un ordinateur portable" width="172" height="225">
+            <h3 class="metier-card__title">Maîtrise d’œuvre</h3>
+            <ul class="metier-card__list">
+              <li>Expertise</li>
+              <li>Conception : EP/AP/PRO</li>
+              <li>Réalisation : ACT/VISA/DET/AOR</li>
+              <li>Réception des travaux</li>
+            </ul>
+            <div class="metier-card__cta">
+              <a href="maitrise-oeuvre.html" class="btn btn--orange">En savoir plus</a>
+            </div>
+          </li>
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/assistance-maitrise-oeuvre.png" alt="Technicien sur une nacelle élévatrice" width="172" height="225">
+            <h3 class="metier-card__title">Assistance à maîtrise d’œuvre</h3>
+            <ul class="metier-card__list">
+              <li>Aide à la décision</li>
+              <li>Suivi administratif</li>
+              <li>Coordination des parties prenantes</li>
+              <li>Appui technique et réglementaire</li>
+            </ul>
+            <div class="metier-card__cta">
+              <a href="assistance-maitrise-ouvrage.html" class="btn btn--orange">En savoir plus</a>
+            </div>
+          </li>
+        </ul>
+</div>
+    </section>
+
+
+    <!-- =========================================================
+         À PROPOS – "Un bureau d'études indépendant…"
+         Texte + logos de certification à gauche,
+         château d'eau dessiné avec les chiffres clés à droite.
+         ========================================================= -->
+    <section class="about">
+      <div class="container">
+        <div class="about__inner">
+
+          <div class="about__content">
+            <h2 class="section-title">
+              Un bureau d’études <span class="text-orange">indépendant</span><br>
+              <span class="text-orange">et ancré</span> dans les territoires
+            </h2>
+
+            <p class="about__text">
+              La qualité, la rigueur et le respect de l’environnement font partie intégrante de notre façon de travailler.
+              Nos certifications ISO 9001, ISO 14001 et nos qualifications OPQIBI témoignent de <strong>notre engagement à fournir des prestations fiables, structurées et adaptées</strong> aux exigences de chaque projet.
+            </p>
+
+            <ul class="about__logos">
+              <li><img src="images/logos/opqibi.png" alt="OPQIBI – L’ingénierie qualifiée" width="177" height="65"></li>
+              <li><img src="images/logos/afaq-iso-14001.png" alt="AFAQ ISO 14001 Environnement – AFNOR Certification" width="74" height="68"></li>
+              <li><img src="images/logos/afaq-iso-9001.png" alt="AFAQ ISO 9001 Qualité – AFNOR Certification" width="74" height="69"></li>
+            </ul>
+
+            <p class="about__text">
+              Elles garantissent à nos clients un accompagnement sérieux, une organisation maîtrisée et une démarche responsable, de l’étude à la réalisation.
+            </p>
+
+            <a href="socama.html" class="btn btn--orange btn--large about__btn">Découvrir Socama</a>
+          </div>
+
+          <!-- Château d'eau + chiffres clés.
+               Les bulles et les points sont placés en % de l'image :
+               ils suivent le dessin quelle que soit sa taille. -->
+          <div class="about__visual" data-counters>
+            <img class="about__drawing" src="images/decor/chateau-eau.png" alt="" aria-hidden="true" width="805" height="808">
+
+            <span class="about__dot about__dot--bleu" aria-hidden="true"></span>
+            <span class="about__dot about__dot--vert" aria-hidden="true"></span>
+
+            <!-- Chiffres clés : la valeur à atteindre est dans data-count
+                 (le compteur part de 0 quand la section apparaît, voir js/main.js) -->
+            <ul class="about__stats">
+              <li class="stat stat--expertise">
+                <span class="stat__number text-green"><span data-count="60">60</span><small>ans</small></span>
+                <span class="stat__label">D’expertise</span>
+              </li>
+              <li class="stat stat--agences">
+                <span class="stat__number text-orange"><span data-count="14">14</span></span>
+                <span class="stat__label">Agences</span>
+              </li>
+              <li class="stat stat--clients">
+                <span class="stat__number text-orange"><span data-count="500">500</span>+</span>
+                <span class="stat__label">Clients</span>
+              </li>
+              <li class="stat stat--collaborateurs">
+                <span class="stat__number text-green"><span data-count="80">80</span>+</span>
+                <span class="stat__label">Collaborateurs</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         CLIENTS – "Ils nous font confiance"
+         ========================================================= -->
+    <section class="clients">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Ils nous font <span class="text-orange">confiance</span></h2>
+        </div>
+
+        <ul class="clients__logos">
+          <li><img src="images/logos/clients/domofrance.png" alt="Domofrance – Groupe Action Logement" width="170" height="56"></li>
+          <li><img src="images/logos/clients/bouygues-es.png" alt="Bouygues Energies &amp; Services" width="135" height="75"></li>
+          <li><img src="images/logos/clients/jonzac.png" alt="Ville de Jonzac" width="76" height="80"></li>
+          <li><img src="images/logos/clients/bordeaux-metropole.png" alt="Bordeaux Métropole" width="191" height="74"></li>
+          <li><img src="images/logos/clients/gironde-habitat.png" alt="Gironde Habitat" width="131" height="68"></li>
+          <li><img src="images/logos/clients/tulle.png" alt="Ville de Tulle" width="143" height="78"></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         RÉALISATIONS – "Focus sur nos réalisations"
+         Carrousel : défilement horizontal (souris, doigt ou flèches).
+         Les cartes débordent à droite de l'écran (effet "il y en a d'autres").
+         Les cartes reprennent 6 références de la page references.html (lien vers leur ancre).
+         ========================================================= -->
+    <section class="realisations">
+      <div class="container realisations__head">
+        <h2 class="section-title">Focus sur nos <span class="text-orange">réalisations</span></h2>
+
+        <div class="carousel__nav">
+          <button class="carousel__btn" type="button" data-carousel="prev" aria-label="Réalisation précédente">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10H3m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel__btn" type="button" data-carousel="next" aria-label="Réalisation suivante">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <ul class="carousel__track">
+        <li class="carousel__slide">
+          <a href="realisation-montignac.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/montignac.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Paysages &amp; VRD</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Aménagement urbain de voirie</span>
+                <span class="realisation-card__place">Montignac (24)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="carousel__slide">
+          <a href="realisation-uzerche.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/uzerche.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Milieux aquatiques</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Passe à poissons de la digue des Carderies</span>
+                <span class="realisation-card__place">Uzerche (19)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="carousel__slide">
+          <a href="realisation-brivezac.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/brivezac.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Eau potable</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Unité de production d’eau potable</span>
+                <span class="realisation-card__place">Nonards et Brivezac (19)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="carousel__slide">
+          <a href="realisation-saint-cere.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/saint-cere.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Assainissement</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Station d’épuration de Saint-Céré</span>
+                <span class="realisation-card__place">Saint-Céré (46)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="carousel__slide">
+          <a href="realisation-margaux.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/margaux.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Eau potable</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Traitement des fluorures sur alumine activée</span>
+                <span class="realisation-card__place">Margaux (33)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="carousel__slide">
+          <a href="realisation-saint-mexant.html" class="realisation-card">
+            <span class="realisation-card__photo">
+              <img src="images/references/saint-mexant.jpg" alt="" width="986" height="538">
+              <span class="realisation-card__tag">Assainissement</span>
+            </span>
+            <span class="realisation-card__body">
+              <span>
+                <span class="realisation-card__title">Station d’épuration à filtres plantés de roseaux</span>
+                <span class="realisation-card__place">Saint-Mexant (19)</span>
+              </span>
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="container section-cta">
+        <a href="references.html" class="btn btn--orange btn--large">Voir nos réalisations</a>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         RSE – "Une démarche RSE engagée au quotidien"
+         Collage de 3 photos (cadre de couleur incliné derrière chaque
+         photo + étiquette) à gauche, texte à droite.
+         ========================================================= -->
+    <section class="rse">
+      <img class="rse__drawing" src="images/decor/plan-riviere.png" alt="" aria-hidden="true" width="557" height="970">
+      <span class="rse__dot rse__dot--bleu" aria-hidden="true"></span>
+      <span class="rse__dot rse__dot--vert" aria-hidden="true"></span>
+
+      <div class="container rse__inner">
+
+        <!-- Collage : chaque photo = cadre coloré (::before) + image + étiquette -->
+        <div class="rse__collage">
+          <figure class="rse-photo rse-photo--engagement">
+            <img src="images/rse/engagement.png" alt="L’équipe SOCAMA réunie lors d’une course solidaire" width="286" height="286">
+            <figcaption class="rse-photo__label">Engagement</figcaption>
+          </figure>
+
+          <figure class="rse-photo rse-photo--transmission">
+            <img src="images/rse/transmission.png" alt="Atelier de construction d’une maquette en équipe" width="312" height="234">
+            <figcaption class="rse-photo__label">Transmission</figcaption>
+          </figure>
+
+          <figure class="rse-photo rse-photo--sensibilisation">
+            <img src="images/rse/sensibilisation.png" alt="Enfants découvrant un site naturel lors d’une sortie de sensibilisation" width="286" height="339">
+            <figcaption class="rse-photo__label">Sensibilisation</figcaption>
+          </figure>
+        </div>
+
+        <div class="rse__content">
+          <h2 class="section-title">
+            Une démarche RSE <span class="text-orange">engagée</span> au quotidien
+          </h2>
+
+          <div class="rse__text">
+            <p>Chez SOCAMA Ingénierie, notre démarche RSE repose sur des <strong>engagements concrets</strong> en matière de qualité, d’environnement et de responsabilité sociétale.</p>
+            <p>Nos certifications ISO 9001 et ISO 14001 témoignent de notre volonté d’<strong>amélioration continue et de maîtrise de notre impact environnemental</strong>.</p>
+            <p>Cette démarche se traduit dans nos projets comme dans notre fonctionnement interne : gestion durable de l’eau, préservation des milieux naturels, réduction du papier, valorisation des déchets, développement des compétences et bien-être au travail.</p>
+          </div>
+
+          <a href="engagement-rse.html" class="btn btn--orange btn--large rse__btn">Découvrir nos engagements</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         RECRUTEMENT – "Rejoignez une équipe engagée…"
+         Fond gris-bleu (arrondi en haut à droite), texte à gauche,
+         photo de l'équipe avec cadre bleu incliné à droite.
+         ========================================================= -->
+    <section class="team">
+      <div class="container team__inner">
+
+        <div class="team__content">
+          <h2 class="section-title">
+            <span class="text-orange">Rejoignez</span><br>
+            une équipe engagée pour les<br class="br-desktop">
+            territoires de demain
+          </h2>
+
+          <div class="team__text">
+            <p>Chez SOCAMA Ingénierie, <strong>nous recherchons des profils engagés</strong>, curieux et rigoureux, prêts à contribuer à des missions variées dans les domaines de l’eau, de l’environnement et de l’aménagement des territoires.</p>
+            <p>Rejoindre notre équipe, c’est participer à des projets techniques à fort impact, <strong>évoluer dans une structure à taille humaine et collaborer avec des professionnels investis</strong>. Que vous soyez expérimenté, jeune diplômé ou en recherche d’une nouvelle opportunité, nous sommes attentifs aux talents qui partagent notre vision.</p>
+          </div>
+
+          <a href="carrieres.html" class="btn btn--orange btn--large team__btn">Rejoindre l’équipe</a>
+        </div>
+
+        <figure class="team__photo">
+          <img src="images/equipe/equipe-socama.png" alt="L’équipe SOCAMA Ingénierie réunie en extérieur" width="689" height="423">
+        </figure>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         SOCA'MAG – "Nos métiers au fil de l'eau !"
+         3 derniers articles du magazine + bouton vers le Soca'mag.
+         Décor : dessins de rivière/roseaux à gauche et en bas à droite.
+         ========================================================= -->
+    <section class="socamag">
+      <img class="socamag__decor socamag__decor--gauche" src="images/decor/riviere-roseaux.png" alt="" aria-hidden="true" width="1027" height="1254">
+      <img class="socamag__decor socamag__decor--droite" src="images/decor/roseaux.png" alt="" aria-hidden="true" width="501" height="1017">
+
+      <div class="container socamag__inner">
+        <div class="section-head">
+          <h2 class="section-title"><span class="text-orange">Nos métiers</span> au fil de l’eau !</h2>
+        </div>
+
+        <!-- 1 carte = 1 article (photo, titre, extrait coupé automatiquement, temps de lecture) -->
+        <ul class="article-list">
+          <li>
+            <a href="article-impact-environnemental.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/impact-environnemental.png" alt="" width="493" height="252">
+              </span>
+              <div class="article-card__body">
+                <h3 class="article-card__title">Mesurer pour mieux maîtriser l’impact environnemental des projets</h3>
+                <p class="article-card__excerpt">État initial, suivi de chantier, contrôle après travaux : observer le milieu à chaque étape, c’est la meilleure façon de limiter l’empreinte d’un projet.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">4 min</span>
+                  <span class="btn-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="article-genie-ecologique.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/genie-ecologique.png" alt="" width="493" height="252">
+              </span>
+              <div class="article-card__body">
+                <h3 class="article-card__title">Analyse des milieux et génie écologique</h3>
+                <p class="article-card__excerpt">Comprendre un cours d’eau ou une zone humide avant d’agir, puis travailler avec le vivant : c’est le principe du génie écologique.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">4 min</span>
+                  <span class="btn-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="article-zones-littorales.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/zones-littorales.png" alt="" width="493" height="252">
+              </span>
+              <div class="article-card__body">
+                <h3 class="article-card__title">Littoral et estuaires : s’adapter à la montée du niveau de la mer</h3>
+                <p class="article-card__excerpt">Le niveau de la mer monte de plus en plus vite. Sur l’estuaire de la Gironde, les ouvrages hydrauliques sont en première ligne.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">5 min</span>
+                  <span class="btn-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="section-cta">
+          <a href="socamag.html" class="btn btn--orange btn--large">Découvrir le Soca’mag</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       PIED DE PAGE
+       1. Bandeau d'appel à l'action (contact / recrutement)
+       2. Logo + certifications + 3 colonnes de liens
+       3. Barre du bas : copyright, liens légaux, LinkedIn, retour en haut
+       Décor : 2 pilules de couleur (rappel de la hero), coupées au bord droit.
+       ========================================================= -->
+  <footer class="footer">
+    <span class="footer__pill footer__pill--vert" aria-hidden="true"></span>
+    <span class="footer__pill footer__pill--jaune" aria-hidden="true"></span>
+
+    <div class="container">
+
+      <!-- 1. Appel à l'action -->
+      <div class="footer__cta">
+        <p class="footer__cta-title">
+          Un projet ? Une question ?<br>
+          <span class="text-yellow">Parlons-en.</span>
+        </p>
+        <div class="footer__cta-actions">
+          <a href="#" class="btn btn--orange btn--large">Contactez-nous</a>
+          <a href="carrieres.html" class="btn btn--outline btn--large">Rejoindre l’équipe</a>
+        </div>
+      </div>
+
+      <!-- 2. Logo, certifications et liens -->
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo" aria-label="SOCAMA Ingénierie – Accueil">
+            <img src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+          </a>
+          <p class="footer__tagline">Des solutions durables pour l’eau et l’environnement.<br>L’ingénierie de proximité depuis 1979.</p>
+
+          <ul class="footer__certifs">
+            <li><img src="images/logos/opqibi.png" alt="OPQIBI – L’ingénierie qualifiée" width="177" height="65"></li>
+            <li><img src="images/logos/afaq-iso-14001.png" alt="AFAQ ISO 14001 Environnement" width="74" height="68"></li>
+            <li><img src="images/logos/afaq-iso-9001.png" alt="AFAQ ISO 9001 Qualité" width="74" height="69"></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="SOCAMA">
+          <p class="footer__heading">SOCAMA</p>
+          <ul class="footer__links">
+            <li><a href="eau-potable.html">Domaines</a></li>
+            <li><a href="maitrise-oeuvre.html">Missions</a></li>
+            <li><a href="references.html">Références</a></li>
+            <li><a href="socama.html">Socama</a></li>
+            <li><a href="carrieres.html">Carrières</a></li>
+            <li><a href="socamag.html">Soca’mag</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos domaines">
+          <p class="footer__heading">Nos domaines</p>
+          <ul class="footer__links">
+            <li><a href="milieux-aquatiques.html">Milieux aquatiques et continuité écologique</a></li>
+            <li><a href="eaux-pluviales.html">Gestion et maîtrise des eaux pluviales</a></li>
+            <li><a href="paysages-vrd.html">Paysages &amp; VRD</a></li>
+            <li><a href="assainissement.html">Assainissement</a></li>
+            <li><a href="eau-potable.html">Eau potable</a></li>
+            <li><a href="electrification-eclairage.html">Électrification et éclairage public</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos missions">
+          <p class="footer__heading">Nos missions</p>
+          <ul class="footer__links">
+            <li><a href="etude.html">Étude</a></li>
+            <li><a href="maitrise-oeuvre.html">Maîtrise d’œuvre</a></li>
+            <li><a href="assistance-maitrise-ouvrage.html">Assistance à maîtrise d’ouvrage</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- 3. Barre du bas -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 SOCAMA Ingénierie. Tous droits réservés.</p>
+
+        <ul class="footer__legal">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Plan du site</a></li>
+        </ul>
+
+        <div class="footer__social">
+          <a href="#" class="footer__icon-btn" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+          <a href="#" class="footer__icon-btn" aria-label="Retour en haut de la page">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4m0 0-5 5m5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

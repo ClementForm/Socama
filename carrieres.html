@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrières – SOCAMA Ingénierie</title>
+  <meta name="description" content="Rejoignez SOCAMA Ingénierie et sa filiale EF Études : ingénieurs, techniciens, dessinateurs et assistants au service de l’eau et des territoires.">
+
+  <!-- Polices préchargées (évite le "saut" de texte au chargement) -->
+  <link rel="preload" href="fonts/Gilroy-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Gilroy-Medium.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE (identique sur toutes les pages)
+       ========================================================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header__bar">
+
+      <a href="index.html" class="header__logo" aria-label="SOCAMA Ingénierie – Accueil">
+        <img class="header__logo-white" src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+        <img class="header__logo-color" src="images/logo-socama-couleur.svg" alt="" aria-hidden="true" width="287" height="45">
+      </a>
+
+      <button class="header__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menu principal">
+        <!-- Menu calé sur l'arborescence du site.
+             Chaque menu = volet pleine largeur (.nav__item--mega) :
+             "Missions" et "Socama" = mêmes volets.
+             Ouverture au survol / focus (CSS) ou au clic (JS, bloc "Menus déroulants du header").
+             Sur mobile : accordéons dans le menu plein écran. -->
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-domaines">
+              Nos domaines
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega" id="menu-domaines">
+              <ul class="mega__list">
+                <li>
+                  <a href="eaux-pluviales.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eaux-pluviales.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Gestion et maîtrise des eaux pluviales</span>
+                      <span class="mega__text">Modélisation du ruissellement et ouvrages</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="paysages-vrd.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><img src="images/icones/paysages-vrd.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Paysages &amp; VRD</span>
+                      <span class="mega__text">Espaces publics, voirie et paysage</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assainissement.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/assainissement.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assainissement</span>
+                      <span class="mega__text">Collecte, pompage et traitement des eaux usées</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="eau-potable.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><img src="images/icones/eau-potable.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Eau potable</span>
+                      <span class="mega__text">Captage, potabilisation, stockage, distribution</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="milieux-aquatiques.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/milieux-aquatiques.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Milieux aquatiques et continuité écologique</span>
+                      <span class="mega__text">GEMAPI, hydraulique fluviale, rivières</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="electrification-eclairage.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eclairage-public.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Électrification et éclairage public</span>
+                      <span class="mega__text">Réseaux BT/HTA, éclairage, télécoms</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Un projet qui mêle plusieurs domaines&nbsp;?</p>
+                <p class="mega__aside-text">Réseaux humides et secs, voirie, paysage : nos équipes coordonnent l’ensemble.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-missions">
+              Missions
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-missions">
+              <ul class="mega__list">
+                <li>
+                  <a href="maitrise-oeuvre.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Maîtrise d’œuvre</span>
+                      <span class="mega__text">De la conception à la réception des travaux</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assistance-maitrise-ouvrage.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/assistance-maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assistance à maîtrise d’ouvrage</span>
+                      <span class="mega__text">Aide à la décision et suivi de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="etude.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/etudes.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Étude</span>
+                      <span class="mega__text">Faisabilité, diagnostics, dossiers réglementaires</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Du diagnostic au chantier</p>
+                <p class="mega__aside-text">Une même équipe vous accompagne à chaque étape, pour les collectivités comme pour le privé.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="references.html" class="nav__link">Références</a></li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-socama">
+              Socama
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-socama">
+              <ul class="mega__list mega__list--2">
+                <li>
+                  <a href="socama.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Le groupe SOCAMA</span>
+                      <span class="mega__text">Notre histoire, nos valeurs, notre équipe</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nos-agences.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Nos agences</span>
+                      <span class="mega__text">Au plus près de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ef-etudes.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">EF Études et agence</span>
+                      <span class="mega__text">Notre agence partenaire</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="engagement-rse.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Engagement / RSE</span>
+                      <span class="mega__text">Nos engagements responsables</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Plus de 60 ans d’ingénierie indépendante</p>
+                <p class="mega__aside-text">Une équipe pluridisciplinaire, au plus près des territoires.</p>
+                <a href="socama.html" class="btn btn--orange">Découvrir le groupe</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="carrieres.html" class="nav__link is-active" aria-current="page">Carrières</a></li>
+          <li><a href="socamag.html" class="nav__link">Soca’mag</a></li>
+        </ul>
+        <a href="#" class="btn btn--orange">Contact</a>
+
+        <!-- Coordonnées : visibles seulement dans le menu mobile -->
+        <div class="nav__infos">
+          <a href="tel:+33556340853" class="nav__info">05 56 34 08 53</a>
+          <a href="mailto:socama@socama.fr" class="nav__info">socama@socama.fr</a>
+          <a href="#" class="nav__social" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <span class="header__progress" aria-hidden="true"></span>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO : photo d'équipe, aplat orange décalé
+         ========================================================= -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+
+        <div class="page-hero__content">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Carrières</span>
+          </nav>
+
+          <h1 class="page-hero__title">
+            Rejoignez une équipe<br>
+            <span class="hero__highlight">engagée</span> pour l’eau
+          </h1>
+
+          <p class="page-hero__lead">
+            Ingénieurs, techniciens, dessinateurs, assistants : chez SOCAMA et sa filiale
+            EF Études, chaque talent participe à des projets concrets, utiles aux territoires.
+          </p>
+
+          <div class="page-hero__btns">
+            <a href="#offres" class="btn btn--orange btn--large page-hero__btn">Voir les offres</a>
+            <a href="#candidature" class="btn btn--outline btn--large page-hero__btn">Candidature spontanée</a>
+          </div>
+        </div>
+
+        <div class="page-hero__visual page-hero__visual--career">
+          <span class="career-photo__bg" aria-hidden="true"></span>
+          <figure class="career-photo">
+            <img src="images/equipe/equipe-socama.png" alt="L’équipe SOCAMA Ingénierie réunie en extérieur" width="689" height="423">
+          </figure>
+          <span class="page-hero__dot page-hero__dot--vert" aria-hidden="true"></span>
+          <span class="page-hero__dot page-hero__dot--jaune" aria-hidden="true"></span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         POURQUOI NOUS REJOINDRE
+         ========================================================= -->
+    <section class="domain-block">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Pourquoi <span class="text-orange">nous rejoindre ?</span></h2>
+        </div>
+        <ul class="landscape__list">
+          <li class="landscape-card reveal"><span class="landscape-card__number">01</span><h3 class="landscape-card__title">Une équipe à taille humaine</h3><p class="landscape-card__text">Des agences où chacun compte, une direction proche du terrain et accessible.</p></li>
+          <li class="landscape-card reveal"><span class="landscape-card__number">02</span><h3 class="landscape-card__title">Des projets qui ont du sens</h3><p class="landscape-card__text">Eau potable, assainissement, rivières, espaces publics : des ouvrages utiles au quotidien des habitants.</p></li>
+          <li class="landscape-card reveal"><span class="landscape-card__number">03</span><h3 class="landscape-card__title">De la variété</h3><p class="landscape-card__text">Études, conception, suivi de chantier : un métier polyvalent, entre bureau et terrain.</p></li>
+          <li class="landscape-card reveal"><span class="landscape-card__number">04</span><h3 class="landscape-card__title">Apprendre et transmettre</h3><p class="landscape-card__text">Formation, accompagnement des jeunes diplômés et partage des savoir-faire entre générations.</p></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         NOS MÉTIERS – effectifs réels (somme des équipes des agences)
+         ========================================================= -->
+    <section class="domain-block domain-block--light">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Nos <span class="text-orange">métiers</span></h2>
+          <p class="section-subtitle">Des profils complémentaires, issus d’écoles d’ingénieurs et de BTS, qui travaillent main dans la main sur chaque projet.</p>
+        </div>
+        <ul class="profiles">
+          <li class="profile reveal" style="--profile-color: var(--color-blue)">
+            <p class="profile__count"><strong>32</strong> ingénieurs</p>
+            <h3 class="profile__title">Ingénieur·e chargé·e d’affaires</h3>
+            <p class="profile__text">Vous pilotez les études et les projets, du diagnostic à la réception des travaux, en lien direct avec les maîtres d’ouvrage.</p>
+          </li>
+          <li class="profile reveal" style="--profile-color: var(--color-green)">
+            <p class="profile__count"><strong>22</strong> techniciens</p>
+            <h3 class="profile__title">Technicien·ne &amp; dessinateur·rice projeteur</h3>
+            <p class="profile__text">Relevés, plans, métrés, suivi de chantier : vous donnez forme aux projets, sur écran comme sur le terrain.</p>
+          </li>
+          <li class="profile reveal" style="--profile-color: var(--color-orange)">
+            <p class="profile__count"><strong>5</strong> assistantes</p>
+            <h3 class="profile__title">Assistant·e de projets</h3>
+            <p class="profile__text">Dossiers administratifs, marchés publics, suivi des affaires : vous êtes au cœur de l’organisation de l’agence.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         OFFRES D'EMPLOI
+         ⚠ OFFRES FICTIVES (exemples de mise en page) : à remplacer par les vraies
+           offres. Une offre = un <li class="job-card">. S'il n'y a plus aucune
+           offre, la liste vide est masquée automatiquement (.jobs__list:empty).
+         Le bloc .jobs__empty dessous invite à la candidature spontanée.
+         ========================================================= -->
+    <section class="jobs" id="offres">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Nos offres <span class="text-orange">du moment</span></h2>
+        </div>
+
+        <ul class="jobs__list">
+          <li class="job-card reveal">
+            <div class="job-card__body">
+              <ul class="job-card__tags"><li class="job-card__tag job-card__tag--contract">CDI</li><li class="job-card__tag">Le Haillan (33)</li><li class="job-card__tag">Eau &amp; assainissement</li></ul>
+              <h3 class="job-card__title">Ingénieur·e chargé·e d’affaires eau et assainissement</h3>
+              <p class="job-card__text">Vous pilotez des études et des opérations de maîtrise d’œuvre, du diagnostic à la réception des travaux, pour les collectivités girondines.</p>
+            </div>
+            <a href="#candidature" class="btn btn--orange">Postuler</a>
+          </li>
+          <li class="job-card reveal">
+            <div class="job-card__body">
+              <ul class="job-card__tags"><li class="job-card__tag job-card__tag--contract">CDI</li><li class="job-card__tag">Tulle (19)</li><li class="job-card__tag">VRD</li></ul>
+              <h3 class="job-card__title">Technicien·ne VRD – dessinateur·rice projeteur</h3>
+              <p class="job-card__text">Relevés, plans d’exécution et métrés sous AutoCAD / Covadis, et suivi de chantiers d’aménagement urbain.</p>
+            </div>
+            <a href="#candidature" class="btn btn--orange">Postuler</a>
+          </li>
+          <li class="job-card reveal">
+            <div class="job-card__body">
+              <ul class="job-card__tags"><li class="job-card__tag job-card__tag--contract">CDI</li><li class="job-card__tag">Bouguenais (44)</li><li class="job-card__tag job-card__tag--ef">EF Études</li></ul>
+              <h3 class="job-card__title">Chargé·e d’études assainissement non collectif</h3>
+              <p class="job-card__text">Études de filières, contrôles et animation de SPANC pour les collectivités de l’Ouest.</p>
+            </div>
+            <a href="#candidature" class="btn btn--orange">Postuler</a>
+          </li>
+        </ul>
+
+        <div class="jobs__empty reveal">
+          <span class="jobs__empty-icon" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 3c-3 4.2-6 7.6-6 11a6 6 0 0 0 12 0c0-3.4-3-6.8-6-11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <p class="jobs__empty-title">Aucune offre ne correspond à votre profil&nbsp;?</p>
+            <p class="jobs__empty-text">Nous sommes toujours attentifs aux talents. Envoyez-nous votre candidature spontanée : elle sera transmise à l’agence de votre choix.</p>
+          </div>
+          <a href="#candidature" class="btn btn--orange btn--large">Candidater</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         OÙ TRAVAILLER
+         ========================================================= -->
+    <section class="career-places">
+      <div class="container career-places__inner reveal">
+        <div>
+          <h2 class="section-title">Où <span class="text-orange">travailler ?</span></h2>
+          <p class="career-places__text">Six agences SOCAMA dans le grand Sud-Ouest et le centre de la France, et neuf implantations EF Études dans l’Ouest.</p>
+        </div>
+        <ul class="agence-links">
+            <li><a href="agence-le-haillan.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Le Haillan (33)</a></li>
+            <li><a href="agence-tulle.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Tulle (19)</a></li>
+            <li><a href="agence-marsac-sur-l-isle.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Marsac-sur-l’Isle (24)</a></li>
+            <li><a href="agence-saintes.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Saintes (17)</a></li>
+            <li><a href="agence-sainte-florine.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Sainte-Florine (43)</a></li>
+            <li><a href="agence-chateau-thierry.html" class="agence-link"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Château-Thierry (02)</a></li>
+          <li><a href="ef-etudes.html" class="agence-link agence-link--ef"><svg class="hero-pin__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> EF Études (9 sites)</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         CANDIDATURE SPONTANÉE
+         ⚠ Formulaire statique : à brancher sur l'outil d'envoi du site
+           (action, traitement du CV, consentement RGPD).
+         ========================================================= -->
+    <section class="apply" id="candidature">
+      <div class="container apply__inner">
+
+        <div class="apply__intro reveal">
+          <h2 class="section-title">Candidature <span class="text-orange">spontanée</span></h2>
+          <p class="apply__text">Présentez-vous en quelques lignes et joignez votre CV. Nous revenons vers vous rapidement.</p>
+          <p class="apply__contact">
+            Vous préférez l’email&nbsp;?<br>
+            <a href="mailto:socama@socama.fr">socama@socama.fr</a>
+          </p>
+        </div>
+
+        <form class="apply-form reveal" action="#" method="post" enctype="multipart/form-data">
+          <div class="apply-form__row">
+            <label class="field"><span class="field__label">Prénom</span><input class="field__input" type="text" name="prenom" autocomplete="given-name" required></label>
+            <label class="field"><span class="field__label">Nom</span><input class="field__input" type="text" name="nom" autocomplete="family-name" required></label>
+          </div>
+          <div class="apply-form__row">
+            <label class="field"><span class="field__label">Email</span><input class="field__input" type="email" name="email" autocomplete="email" required></label>
+            <label class="field"><span class="field__label">Téléphone</span><input class="field__input" type="tel" name="telephone" autocomplete="tel"></label>
+          </div>
+          <div class="apply-form__row">
+            <label class="field"><span class="field__label">Poste recherché</span>
+              <select class="field__input" name="poste">
+                <option>Ingénieur·e</option>
+                <option>Technicien·ne</option>
+                <option>Dessinateur·rice projeteur</option>
+                <option>Assistant·e</option>
+                <option>Alternance / stage</option>
+                <option>Autre</option>
+              </select>
+            </label>
+            <label class="field"><span class="field__label">Agence souhaitée</span>
+              <select class="field__input" name="agence">
+                <option>Peu importe</option>
+                  <option>Le Haillan</option>
+                  <option>Tulle</option>
+                  <option>Marsac-sur-l’Isle</option>
+                  <option>Saintes</option>
+                  <option>Sainte-Florine</option>
+                  <option>Château-Thierry</option>
+                  <option>EF Études (Ouest)</option>
+              </select>
+            </label>
+          </div>
+          <label class="field"><span class="field__label">Message</span><textarea class="field__input field__input--area" name="message" rows="5"></textarea></label>
+          <label class="field field--file">
+            <span class="field__label">Votre CV (PDF, 5 Mo max.)</span>
+            <input class="field__input" type="file" name="cv" accept=".pdf,.doc,.docx" required>
+          </label>
+          <label class="field-check">
+            <input type="checkbox" name="consentement" required>
+            <span>J’accepte que mes données soient utilisées pour traiter ma candidature.</span>
+          </label>
+          <button type="submit" class="btn btn--orange btn--large">Envoyer ma candidature</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       ========================================================= -->
+  <footer class="footer">
+    <span class="footer__pill footer__pill--vert" aria-hidden="true"></span>
+    <span class="footer__pill footer__pill--jaune" aria-hidden="true"></span>
+
+    <div class="container">
+
+      <div class="footer__cta">
+        <p class="footer__cta-title">
+          Un projet ? Une question ?<br>
+          <span class="text-yellow">Parlons-en.</span>
+        </p>
+        <div class="footer__cta-actions">
+          <a href="#" class="btn btn--orange btn--large">Contactez-nous</a>
+          <a href="carrieres.html" class="btn btn--outline btn--large">Rejoindre l’équipe</a>
+        </div>
+      </div>
+
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo" aria-label="SOCAMA Ingénierie – Accueil">
+            <img src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+          </a>
+          <p class="footer__tagline">Des solutions durables pour l’eau et l’environnement.<br>L’ingénierie de proximité depuis 1979.</p>
+
+          <ul class="footer__certifs">
+            <li><img src="images/logos/opqibi.png" alt="OPQIBI – L’ingénierie qualifiée" width="177" height="65"></li>
+            <li><img src="images/logos/afaq-iso-14001.png" alt="AFAQ ISO 14001 Environnement" width="74" height="68"></li>
+            <li><img src="images/logos/afaq-iso-9001.png" alt="AFAQ ISO 9001 Qualité" width="74" height="69"></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="SOCAMA">
+          <p class="footer__heading">SOCAMA</p>
+          <ul class="footer__links">
+            <li><a href="eau-potable.html">Domaines</a></li>
+            <li><a href="maitrise-oeuvre.html">Missions</a></li>
+            <li><a href="references.html">Références</a></li>
+            <li><a href="socama.html">Socama</a></li>
+            <li><a href="carrieres.html">Carrières</a></li>
+            <li><a href="socamag.html">Soca’mag</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos domaines">
+          <p class="footer__heading">Nos domaines</p>
+          <ul class="footer__links">
+            <li><a href="milieux-aquatiques.html">Milieux aquatiques et continuité écologique</a></li>
+            <li><a href="eaux-pluviales.html">Gestion et maîtrise des eaux pluviales</a></li>
+            <li><a href="paysages-vrd.html">Paysages &amp; VRD</a></li>
+            <li><a href="assainissement.html">Assainissement</a></li>
+            <li><a href="eau-potable.html">Eau potable</a></li>
+            <li><a href="electrification-eclairage.html">Électrification et éclairage public</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos missions">
+          <p class="footer__heading">Nos missions</p>
+          <ul class="footer__links">
+            <li><a href="etude.html">Étude</a></li>
+            <li><a href="maitrise-oeuvre.html">Maîtrise d’œuvre</a></li>
+            <li><a href="assistance-maitrise-ouvrage.html">Assistance à maîtrise d’ouvrage</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 SOCAMA Ingénierie. Tous droits réservés.</p>
+
+        <ul class="footer__legal">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Plan du site</a></li>
+        </ul>
+
+        <div class="footer__social">
+          <a href="#" class="footer__icon-btn" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+          <a href="#" class="footer__icon-btn" aria-label="Retour en haut de la page">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4m0 0-5 5m5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

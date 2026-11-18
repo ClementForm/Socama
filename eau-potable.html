@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eau potable – SOCAMA Ingénierie</title>
+  <meta name="description" content="Captage, potabilisation, stockage et distribution : SOCAMA Ingénierie accompagne les collectivités sur toute la chaîne de l’eau potable.">
+
+  <!-- Polices préchargées (évite le "saut" de texte au chargement) -->
+  <link rel="preload" href="fonts/Gilroy-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Gilroy-Medium.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE (identique sur toutes les pages)
+       ========================================================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header__bar">
+
+      <a href="index.html" class="header__logo" aria-label="SOCAMA Ingénierie – Accueil">
+        <img class="header__logo-white" src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+        <img class="header__logo-color" src="images/logo-socama-couleur.svg" alt="" aria-hidden="true" width="287" height="45">
+      </a>
+
+      <button class="header__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menu principal">
+        <!-- Menu calé sur l'arborescence du site.
+             Chaque menu = volet pleine largeur (.nav__item--mega) :
+             "Missions" et "Socama" = mêmes volets.
+             Ouverture au survol / focus (CSS) ou au clic (JS, bloc "Menus déroulants du header").
+             Sur mobile : accordéons dans le menu plein écran. -->
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle is-active" aria-expanded="false" aria-controls="menu-domaines">
+              Nos domaines
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega" id="menu-domaines">
+              <ul class="mega__list">
+                <li>
+                  <a href="eaux-pluviales.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eaux-pluviales.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Gestion et maîtrise des eaux pluviales</span>
+                      <span class="mega__text">Modélisation du ruissellement et ouvrages</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="paysages-vrd.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><img src="images/icones/paysages-vrd.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Paysages &amp; VRD</span>
+                      <span class="mega__text">Espaces publics, voirie et paysage</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assainissement.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/assainissement.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assainissement</span>
+                      <span class="mega__text">Collecte, pompage et traitement des eaux usées</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="eau-potable.html" class="mega__link is-current" aria-current="page" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><img src="images/icones/eau-potable.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Eau potable</span>
+                      <span class="mega__text">Captage, potabilisation, stockage, distribution</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="milieux-aquatiques.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/milieux-aquatiques.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Milieux aquatiques et continuité écologique</span>
+                      <span class="mega__text">GEMAPI, hydraulique fluviale, rivières</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="electrification-eclairage.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eclairage-public.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Électrification et éclairage public</span>
+                      <span class="mega__text">Réseaux BT/HTA, éclairage, télécoms</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Un projet qui mêle plusieurs domaines&nbsp;?</p>
+                <p class="mega__aside-text">Réseaux humides et secs, voirie, paysage : nos équipes coordonnent l’ensemble.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-missions">
+              Missions
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-missions">
+              <ul class="mega__list">
+                <li>
+                  <a href="maitrise-oeuvre.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Maîtrise d’œuvre</span>
+                      <span class="mega__text">De la conception à la réception des travaux</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assistance-maitrise-ouvrage.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/assistance-maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assistance à maîtrise d’ouvrage</span>
+                      <span class="mega__text">Aide à la décision et suivi de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="etude.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/etudes.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Étude</span>
+                      <span class="mega__text">Faisabilité, diagnostics, dossiers réglementaires</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Du diagnostic au chantier</p>
+                <p class="mega__aside-text">Une même équipe vous accompagne à chaque étape, pour les collectivités comme pour le privé.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="references.html" class="nav__link">Références</a></li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-socama">
+              Socama
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-socama">
+              <ul class="mega__list mega__list--2">
+                <li>
+                  <a href="socama.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Le groupe SOCAMA</span>
+                      <span class="mega__text">Notre histoire, nos valeurs, notre équipe</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nos-agences.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Nos agences</span>
+                      <span class="mega__text">Au plus près de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ef-etudes.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">EF Études et agence</span>
+                      <span class="mega__text">Notre agence partenaire</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="engagement-rse.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Engagement / RSE</span>
+                      <span class="mega__text">Nos engagements responsables</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Plus de 60 ans d’ingénierie indépendante</p>
+                <p class="mega__aside-text">Une équipe pluridisciplinaire, au plus près des territoires.</p>
+                <a href="socama.html" class="btn btn--orange">Découvrir le groupe</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="carrieres.html" class="nav__link">Carrières</a></li>
+          <li><a href="socamag.html" class="nav__link">Soca’mag</a></li>
+        </ul>
+        <a href="#" class="btn btn--orange">Contact</a>
+
+        <!-- Coordonnées : visibles seulement dans le menu mobile -->
+        <div class="nav__infos">
+          <a href="tel:+33556340853" class="nav__info">05 56 34 08 53</a>
+          <a href="mailto:socama@socama.fr" class="nav__info">socama@socama.fr</a>
+          <a href="#" class="nav__social" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <span class="header__progress" aria-hidden="true"></span>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO DE PAGE
+         ========================================================= -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+
+        <div class="page-hero__content">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <span>Nos domaines</span>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Eau potable</span>
+          </nav>
+
+          <h1 class="page-hero__title">
+            Une eau potable <span class="hero__highlight">sûre</span><br>
+            du captage au robinet
+          </h1>
+
+          <p class="page-hero__lead">
+            Ressource, traitement, stockage et distribution : SOCAMA conçoit et accompagne
+            les ouvrages d’eau potable des collectivités, en études, en maîtrise d’œuvre
+            et en assistance à maîtrise d’ouvrage.
+          </p>
+
+          <a href="#" class="btn btn--orange btn--large page-hero__btn">Parler de votre projet</a>
+        </div>
+
+        <div class="page-hero__visual">
+          <span class="page-hero__frame" aria-hidden="true"></span>
+          <figure class="page-hero__photo">
+            <img src="images/domaines/eau-potable-hero.jpg" alt="Eau claire qui coule dans une main" width="1240" height="940">
+          </figure>
+          <figure class="page-hero__circle">
+            <img src="images/domaines/eau-potable-cercle.jpg" alt="Installation d’une pompe de forage sur un chantier" width="600" height="600">
+          </figure>
+          <span class="page-hero__dot page-hero__dot--vert" aria-hidden="true"></span>
+          <span class="page-hero__dot page-hero__dot--jaune" aria-hidden="true"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PRÉSENTATION DU DOMAINE
+         ========================================================= -->
+    <section class="domain" style="--domain-color: var(--color-blue)">
+      <div class="container">
+        <div class="domain__grid">
+
+          <div class="domain__content reveal">
+            <span class="domain__icon"><img src="images/icones/eau-potable.svg" alt="" width="83" height="95"></span>
+            <h2 class="section-title domain__title">Toute la chaîne <span class="text-orange">de l’eau potable</span></h2>
+            <p class="domain__subtitle">Captage · Traitement · Stockage · Distribution</p>
+            <div class="domain__text">
+              <p>Du forage jusqu’au robinet, nous intervenons sur <strong>chaque ouvrage du réseau d’eau potable</strong>, en étroite collaboration avec les services de l’État, les Agences Régionales de Santé et les exploitants.</p>
+            </div>
+
+            <ul class="domain__features domain__features--compact">
+              <li class="domain-feature">
+                <h3 class="domain-feature__title">Ressource</h3>
+                <p class="domain-feature__text">Forages et captages à créer ou à réhabiliter, avec les hydrogéologues.</p>
+              </li>
+              <li class="domain-feature">
+                <h3 class="domain-feature__title">Potabilisation</h3>
+                <p class="domain-feature__text">Filière de traitement adaptée à l’origine de l’eau et à la qualité attendue.</p>
+              </li>
+              <li class="domain-feature">
+                <h3 class="domain-feature__title">Stockage</h3>
+                <p class="domain-feature__text">Diagnostic et conception de réservoirs et châteaux d’eau.</p>
+              </li>
+              <li class="domain-feature">
+                <h3 class="domain-feature__title">Distribution</h3>
+                <p class="domain-feature__text">Réseaux modélisés pour garantir qualité, débit et pression.</p>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="shape-photo shape-photo--goutte reveal">
+            <img src="images/domaines/eau-potable-arche.jpg" alt="Château d’eau de la station d’eau potable de Margaux" width="1000" height="1200" loading="lazy">
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         SCHÉMA DU CYCLE DE L'EAU (démarre sur l'étape 01)
+         ========================================================= -->
+    <section class="domain-block domain-block--light">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Votre projet dans <span class="text-orange">le cycle de l’eau</span></h2>
+        </div>
+        <!-- =======================================================
+             SCHÉMA DU CYCLE DE L'EAU – paysage en coupe, dessin au trait
+             De gauche à droite : nappe + forage, usine de potabilisation,
+             château d'eau, ville, réseau d'égout, station d'épuration, rivière.
+             - Les canalisations (.pipe) sont animées (l'eau circule).
+             - Chaque ouvrage (g[data-step]) et chaque pastille (.water-scene__spot)
+               correspond à une étape ; le détail s'affiche dans la carte.
+             - Défilement automatique (pause au survol), flèches dans la carte.
+             JS : js/main.js, bloc "Cycle de l'eau".
+             ======================================================= -->
+        <div class="water-scene reveal" data-scene data-scene-start="0">
+          <div class="water-scene__stage">
+
+            <svg class="water-scene__art" viewBox="0 0 1200 560" aria-hidden="true">
+              <!-- Nuages -->
+              <path class="art-cloud" d="M70 120 h90 a18 18 0 0 0 -16 -26 a26 26 0 0 0 -48 -8 a20 20 0 0 0 -26 34 Z"/>
+              <path class="art-cloud" d="M300 70 h70 a14 14 0 0 0 -12 -20 a20 20 0 0 0 -38 -6 a16 16 0 0 0 -20 26 Z"/>
+
+              <!-- Sol, nappe phréatique et rivière -->
+              <path class="art-ground" d="M0 330 H440 C475 330 482 300 520 300 C558 300 565 330 600 330 H1080 C1100 330 1106 395 1140 395 H1200 V560 H0 Z"/>
+              <path class="art-nappe" d="M20 492 C110 470 220 512 320 488 C380 474 420 494 450 488 V532 C380 544 300 520 200 538 C120 550 60 530 20 534 Z"/>
+              <text class="art-label" x="40" y="525">Nappe phréatique</text>
+              <path class="art-river" d="M1086 346 H1200 V395 H1140 C1112 395 1100 366 1086 346 Z"/>
+              <path class="art-wave" d="M1104 362 q8 -5 16 0 t16 0 t16 0 t16 0 t16 0 t16 0"/>
+              <path class="art-wave art-wave--late" d="M1128 378 q8 -5 16 0 t16 0 t16 0 t16 0"/>
+              <text class="art-label" x="1112" y="425">Rivière</text>
+              <path class="art-line" d="M0 330 H440 C475 330 482 300 520 300 C558 300 565 330 600 330 H1080 C1100 330 1106 395 1140 395 H1200"/>
+
+              <!-- Canalisations : tuyau + eau (bleu = eau potable, vert = eaux usées)
+                   + vaguelettes déformées par le filtre #scene-ripple + bulles qui suivent
+                   le tracé (animateMotion sur #pipe-potable / #pipe-usees) -->
+              <defs>
+                <filter id="scene-ripple" x="-5%" y="-5%" width="110%" height="110%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.02 0.12" numOctaves="2" seed="5">
+                    <animate attributeName="baseFrequency" dur="7s" values="0.02 0.12;0.03 0.18;0.02 0.12" repeatCount="indefinite"/>
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" scale="4"/>
+                </filter>
+              </defs>
+              <path id="pipe-potable" class="pipe-tube" d="M112 492 V360 H812"/>
+              <path class="pipe-tube" d="M300 360 V330 M358 360 V326 M520 360 V300 M686 360 V330 M749 360 V330 M812 360 V330"/>
+              <path id="pipe-usees" class="pipe-tube" d="M836 330 V420 H985 V330"/>
+              <path id="pipe-rejet" class="pipe-tube" d="M1044 326 V352 H1100"/>
+
+              <path class="pipe-water pipe-water--potable" d="M112 492 V360 H812 M300 360 V330 M358 360 V326 M520 360 V300 M686 360 V330 M749 360 V330 M812 360 V330"/>
+              <path class="pipe-water pipe-water--usees" d="M836 330 V420 H985 V330 M1044 326 V352 H1100"/>
+
+              <g filter="url(#scene-ripple)">
+                <path class="pipe-ripple" d="M112 492 V360 H812"/>
+                <path class="pipe-ripple pipe-ripple--slow" d="M836 330 V420 H985 V330"/>
+                <path class="pipe-ripple pipe-ripple--short" d="M1044 326 V352 H1100"/>
+              </g>
+
+              <g class="pipe-bubbles">
+                <circle r="3"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#pipe-potable"/></animateMotion></circle>
+                <circle r="2"><animateMotion dur="7s" repeatCount="indefinite" begin="-1.6s"><mpath href="#pipe-potable"/></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="7s" repeatCount="indefinite" begin="-3.1s"><mpath href="#pipe-potable"/></animateMotion></circle>
+                <circle r="2.5"><animateMotion dur="7s" repeatCount="indefinite" begin="-4.4s"><mpath href="#pipe-potable"/></animateMotion></circle>
+                <circle r="2"><animateMotion dur="7s" repeatCount="indefinite" begin="-5.9s"><mpath href="#pipe-potable"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="5s" repeatCount="indefinite" begin="-0.5s"><mpath href="#pipe-usees"/></animateMotion></circle>
+                <circle r="2"><animateMotion dur="5s" repeatCount="indefinite" begin="-2.2s"><mpath href="#pipe-usees"/></animateMotion></circle>
+                <circle r="2.5"><animateMotion dur="5s" repeatCount="indefinite" begin="-3.8s"><mpath href="#pipe-usees"/></animateMotion></circle>
+                <circle r="2.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath href="#pipe-rejet"/></animateMotion></circle>
+                <circle r="2"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-1.2s"><mpath href="#pipe-rejet"/></animateMotion></circle>
+              </g>
+
+              <!-- 01 Forage et station de pompage -->
+              <g class="art-item" data-step="0">
+                <rect class="art" x="78" y="284" width="68" height="46" rx="4"/>
+                <path class="art" d="M70 288 L112 258 L154 288 Z"/>
+                <rect class="art" x="104" y="306" width="16" height="24" rx="2"/>
+              </g>
+
+              <!-- 02 Usine de potabilisation -->
+              <g class="art-item" data-step="1">
+                <rect class="art" x="236" y="276" width="86" height="54" rx="4"/>
+                <rect class="art" x="248" y="290" width="14" height="12" rx="2"/>
+                <rect class="art" x="270" y="290" width="14" height="12" rx="2"/>
+                <rect class="art" x="292" y="290" width="14" height="12" rx="2"/>
+                <path class="art" d="M324 300 V320 A34 10 0 0 0 392 320 V300"/>
+                <ellipse class="art" cx="358" cy="300" rx="34" ry="10"/>
+                <ellipse class="art art--water" cx="358" cy="300" rx="22" ry="5"/>
+              </g>
+
+              <!-- 03 Château d'eau -->
+              <g class="art-item" data-step="2">
+                <!-- Fût (légèrement évasé en bas), porte et meurtrières -->
+                <path class="art" d="M498 300 L506 198 H534 L542 300 Z"/>
+                <path class="art" d="M514 300 V284 A6 6 0 0 1 526 284 V300"/>
+                <path class="art" d="M520 226 V240 M520 252 V266"/>
+                <!-- Cuve : cône sous la cuve + cylindre + toit conique avec lanterneau -->
+                <path class="art" d="M506 198 L470 168 V116 H570 V168 L534 198 Z"/>
+                <path class="art art--water" d="M476 136 H564 V165 L532 192 H508 L476 165 Z"/>
+                <path class="art" d="M470 168 H570 M470 116 H570"/>
+                <path class="art" d="M462 116 L520 88 L578 116 Z"/>
+                <rect class="art" x="513" y="78" width="14" height="10" rx="2"/>
+              </g>
+
+              <!-- 04 Ville (distribution) -->
+              <g class="art-item" data-step="3">
+                <path class="art" d="M660 330 V284 L686 262 L712 284 V330 Z"/>
+                <rect class="art" x="678" y="300" width="16" height="16" rx="2"/>
+                <rect class="art" x="722" y="236" width="54" height="94" rx="3"/>
+                <path class="art" d="M734 252 h10 M754 252 h10 M734 272 h10 M754 272 h10 M734 292 h10 M754 292 h10"/>
+                <path class="art" d="M786 330 V292 L812 270 L838 292 V330 Z"/>
+                <rect class="art" x="804" y="306" width="16" height="24" rx="2"/>
+                <path class="art art--green" d="M866 330 V306"/>
+                <circle class="art art--green" cx="866" cy="292" r="16"/>
+              </g>
+
+              <!-- 05 Réseau de collecte (regard + égout) -->
+              <g class="art-item" data-step="4">
+                <path class="art" d="M900 331 V420 M914 331 V420"/>
+                <ellipse class="art" cx="907" cy="331" rx="14" ry="4"/>
+              </g>
+
+              <!-- 06 Station d'épuration -->
+              <g class="art-item" data-step="5">
+                <rect class="art" x="958" y="286" width="54" height="44" rx="4"/>
+                <rect class="art" x="970" y="298" width="12" height="10" rx="2"/>
+                <rect class="art" x="988" y="298" width="12" height="10" rx="2"/>
+                <path class="art" d="M1018 312 V324 A26 8 0 0 0 1070 324 V312"/>
+                <ellipse class="art" cx="1044" cy="312" rx="26" ry="8"/>
+                <ellipse class="art art--water" cx="1044" cy="312" rx="16" ry="4"/>
+              </g>
+            </svg>
+
+            <!-- Pastilles cliquables, placées en % du dessin (--x, --y) -->
+            <button type="button" class="water-scene__spot water-scene__spot--potable is-active" data-step="0" style="--x: 9.3%;  --y: 40%"  aria-label="Étape 1 : pompage">01</button>
+            <button type="button" class="water-scene__spot water-scene__spot--potable" data-step="1" style="--x: 25%;   --y: 42%"  aria-label="Étape 2 : potabilisation">02</button>
+            <button type="button" class="water-scene__spot water-scene__spot--potable" data-step="2" style="--x: 43.3%; --y: 9%"  aria-label="Étape 3 : stockage">03</button>
+            <button type="button" class="water-scene__spot water-scene__spot--potable" data-step="3" style="--x: 62.4%; --y: 36%"  aria-label="Étape 4 : distribution">04</button>
+            <button type="button" class="water-scene__spot water-scene__spot--usees"   data-step="4" style="--x: 75.6%; --y: 83%"  aria-label="Étape 5 : collecte">05</button>
+            <button type="button" class="water-scene__spot water-scene__spot--usees"   data-step="5" style="--x: 85.5%; --y: 70%"  aria-label="Étape 6 : épuration">06</button>
+
+            <!-- Carte de détail (un panneau par étape, même ordre) -->
+            <div class="water-scene__card" aria-live="polite">
+              <div class="water-scene__panel is-active">
+                <p class="water-scene__tag water-scene__tag--potable">01 · Eau potable</p>
+                <h3 class="water-scene__title">Pompage et ressource</h3>
+                <p class="water-scene__text">Avec les hydrogéologues et les services de l’État, nous définissons les forages et captages à créer ou à réhabiliter, dans le respect de la protection de la ressource.</p>
+              </div>
+              <div class="water-scene__panel">
+                <p class="water-scene__tag water-scene__tag--potable">02 · Eau potable</p>
+                <h3 class="water-scene__title">Traitement et potabilisation</h3>
+                <p class="water-scene__text">Choix de la filière de traitement selon l’origine de l’eau et la qualité attendue au robinet, en lien étroit avec l’ARS et les exploitants.</p>
+              </div>
+              <div class="water-scene__panel">
+                <p class="water-scene__tag water-scene__tag--potable">03 · Eau potable</p>
+                <h3 class="water-scene__title">Stockage</h3>
+                <p class="water-scene__text">Diagnostic et conception de réservoirs et châteaux d’eau, en intégrant les contraintes d’environnement, d’urbanisme et d’exploitation.</p>
+              </div>
+              <div class="water-scene__panel">
+                <p class="water-scene__tag water-scene__tag--potable">04 · Eau potable</p>
+                <h3 class="water-scene__title">Distribution</h3>
+                <p class="water-scene__text">Des réseaux qui garantissent qualité, débit et pression : surpresseurs, ventouses et purges sont dimensionnés par modélisation informatique.</p>
+              </div>
+              <div class="water-scene__panel">
+                <p class="water-scene__tag water-scene__tag--usees">05 · Eaux usées</p>
+                <h3 class="water-scene__title">Collecte des eaux usées</h3>
+                <p class="water-scene__text">Dimensionnement des réseaux gravitaires, des postes de pompage et des filières d’assainissement autonome.</p>
+              </div>
+              <div class="water-scene__panel">
+                <p class="water-scene__tag water-scene__tag--usees">06 · Eaux usées</p>
+                <h3 class="water-scene__title">Traitement des eaux usées</h3>
+                <p class="water-scene__text">Conception de filières de traitement complètes, adaptées aux enjeux du milieu naturel, quelle que soit la capacité de la station.</p>
+              </div>
+
+              <!-- Navigation : étape précédente / suivante + compteur -->
+              <div class="water-scene__nav">
+                <p class="water-scene__count"><strong data-scene-current>01</strong> / 06</p>
+                <div class="water-scene__arrows">
+                  <button type="button" class="water-scene__arrow" data-scene-prev aria-label="Étape précédente">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 10H4m0 0 5-5m-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="water-scene__arrow water-scene__arrow--next" data-scene-next aria-label="Étape suivante">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MODES D'INTERVENTION – cartes "Métiers" (même composant que l'accueil)
+         ========================================================= -->
+    <section class="interventions">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-title">Une même équipe, <span class="text-orange">du diagnostic au chantier</span></h2>
+          <p class="section-subtitle">
+            Dans chacun de ces domaines, nous intervenons <strong>en études, en maîtrise d’œuvre ou en assistance à maîtrise d’ouvrage</strong>,
+            pour les collectivités comme pour les entreprises privées.
+          </p>
+        </div>
+
+        <ul class="metier-list">
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/etudes.png" alt="Ingénieur consultant une tablette sur un chantier" width="172" height="225">
+            <h3 class="metier-card__title">Études</h3>
+            <ul class="metier-card__list">
+              <li>Études de faisabilité</li>
+              <li>Diagnostics &amp; schémas directeurs</li>
+              <li>Études hydrauliques et environnementales</li>
+              <li>Dossiers réglementaires</li>
+            </ul>
+          </li>
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/maitrise-oeuvre.png" alt="Deux ingénieurs travaillant sur un ordinateur portable" width="172" height="225">
+            <h3 class="metier-card__title">Maîtrise d’œuvre</h3>
+            <ul class="metier-card__list">
+              <li>Expertise</li>
+              <li>Conception : EP/AP/PRO</li>
+              <li>Réalisation : ACT/VISA/DET/AOR</li>
+              <li>Réception des travaux</li>
+            </ul>
+          </li>
+          <li class="metier-card">
+            <img class="metier-card__photo" src="images/metiers/assistance-maitrise-oeuvre.png" alt="Technicien sur une nacelle élévatrice" width="172" height="225">
+            <h3 class="metier-card__title">Assistance à maîtrise d’ouvrage</h3>
+            <ul class="metier-card__list">
+              <li>Aide à la décision</li>
+              <li>Suivi administratif</li>
+              <li>Coordination des parties prenantes</li>
+              <li>Appui technique et réglementaire</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="section-cta">
+          <a href="#" class="btn btn--orange btn--large">Voir nos références</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       ========================================================= -->
+  <footer class="footer">
+    <span class="footer__pill footer__pill--vert" aria-hidden="true"></span>
+    <span class="footer__pill footer__pill--jaune" aria-hidden="true"></span>
+
+    <div class="container">
+
+      <div class="footer__cta">
+        <p class="footer__cta-title">
+          Un projet ? Une question ?<br>
+          <span class="text-yellow">Parlons-en.</span>
+        </p>
+        <div class="footer__cta-actions">
+          <a href="#" class="btn btn--orange btn--large">Contactez-nous</a>
+          <a href="carrieres.html" class="btn btn--outline btn--large">Rejoindre l’équipe</a>
+        </div>
+      </div>
+
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo" aria-label="SOCAMA Ingénierie – Accueil">
+            <img src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+          </a>
+          <p class="footer__tagline">Des solutions durables pour l’eau et l’environnement.<br>L’ingénierie de proximité depuis 1979.</p>
+
+          <ul class="footer__certifs">
+            <li><img src="images/logos/opqibi.png" alt="OPQIBI – L’ingénierie qualifiée" width="177" height="65"></li>
+            <li><img src="images/logos/afaq-iso-14001.png" alt="AFAQ ISO 14001 Environnement" width="74" height="68"></li>
+            <li><img src="images/logos/afaq-iso-9001.png" alt="AFAQ ISO 9001 Qualité" width="74" height="69"></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="SOCAMA">
+          <p class="footer__heading">SOCAMA</p>
+          <ul class="footer__links">
+            <li><a href="eau-potable.html">Domaines</a></li>
+            <li><a href="maitrise-oeuvre.html">Missions</a></li>
+            <li><a href="references.html">Références</a></li>
+            <li><a href="socama.html">Socama</a></li>
+            <li><a href="carrieres.html">Carrières</a></li>
+            <li><a href="socamag.html">Soca’mag</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos domaines">
+          <p class="footer__heading">Nos domaines</p>
+          <ul class="footer__links">
+            <li><a href="milieux-aquatiques.html">Milieux aquatiques et continuité écologique</a></li>
+            <li><a href="eaux-pluviales.html">Gestion et maîtrise des eaux pluviales</a></li>
+            <li><a href="paysages-vrd.html">Paysages &amp; VRD</a></li>
+            <li><a href="assainissement.html">Assainissement</a></li>
+            <li><a href="eau-potable.html">Eau potable</a></li>
+            <li><a href="electrification-eclairage.html">Électrification et éclairage public</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos missions">
+          <p class="footer__heading">Nos missions</p>
+          <ul class="footer__links">
+            <li><a href="etude.html">Étude</a></li>
+            <li><a href="maitrise-oeuvre.html">Maîtrise d’œuvre</a></li>
+            <li><a href="assistance-maitrise-ouvrage.html">Assistance à maîtrise d’ouvrage</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 SOCAMA Ingénierie. Tous droits réservés.</p>
+
+        <ul class="footer__legal">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Plan du site</a></li>
+        </ul>
+
+        <div class="footer__social">
+          <a href="#" class="footer__icon-btn" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+          <a href="#" class="footer__icon-btn" aria-label="Retour en haut de la page">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4m0 0-5 5m5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

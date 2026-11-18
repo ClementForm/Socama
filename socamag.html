@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soca’mag – SOCAMA Ingénierie</title>
+  <meta name="description" content="Soca’mag, le magazine de SOCAMA Ingénierie : chantiers, vie de l’entreprise et dossiers d’expertise sur l’eau et l’environnement.">
+
+  <!-- Polices préchargées (évite le "saut" de texte au chargement) -->
+  <link rel="preload" href="fonts/Gilroy-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Gilroy-Medium.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE (identique sur toutes les pages)
+       ========================================================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header__bar">
+
+      <a href="index.html" class="header__logo" aria-label="SOCAMA Ingénierie – Accueil">
+        <img class="header__logo-white" src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+        <img class="header__logo-color" src="images/logo-socama-couleur.svg" alt="" aria-hidden="true" width="287" height="45">
+      </a>
+
+      <button class="header__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menu principal">
+        <!-- Menu calé sur l'arborescence du site.
+             Chaque menu = volet pleine largeur (.nav__item--mega) :
+             "Missions" et "Socama" = mêmes volets.
+             Ouverture au survol / focus (CSS) ou au clic (JS, bloc "Menus déroulants du header").
+             Sur mobile : accordéons dans le menu plein écran. -->
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-domaines">
+              Nos domaines
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega" id="menu-domaines">
+              <ul class="mega__list">
+                <li>
+                  <a href="eaux-pluviales.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eaux-pluviales.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Gestion et maîtrise des eaux pluviales</span>
+                      <span class="mega__text">Modélisation du ruissellement et ouvrages</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="paysages-vrd.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><img src="images/icones/paysages-vrd.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Paysages &amp; VRD</span>
+                      <span class="mega__text">Espaces publics, voirie et paysage</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assainissement.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/assainissement.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assainissement</span>
+                      <span class="mega__text">Collecte, pompage et traitement des eaux usées</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="eau-potable.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><img src="images/icones/eau-potable.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Eau potable</span>
+                      <span class="mega__text">Captage, potabilisation, stockage, distribution</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="milieux-aquatiques.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><img src="images/icones/milieux-aquatiques.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Milieux aquatiques et continuité écologique</span>
+                      <span class="mega__text">GEMAPI, hydraulique fluviale, rivières</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="electrification-eclairage.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><img src="images/icones/eclairage-public.svg" alt="" width="40" height="40"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Électrification et éclairage public</span>
+                      <span class="mega__text">Réseaux BT/HTA, éclairage, télécoms</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Un projet qui mêle plusieurs domaines&nbsp;?</p>
+                <p class="mega__aside-text">Réseaux humides et secs, voirie, paysage : nos équipes coordonnent l’ensemble.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-missions">
+              Missions
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-missions">
+              <ul class="mega__list">
+                <li>
+                  <a href="maitrise-oeuvre.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Maîtrise d’œuvre</span>
+                      <span class="mega__text">De la conception à la réception des travaux</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assistance-maitrise-ouvrage.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/assistance-maitrise-oeuvre.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Assistance à maîtrise d’ouvrage</span>
+                      <span class="mega__text">Aide à la décision et suivi de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="etude.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon mega__icon--photo"><img src="images/metiers/etudes.png" alt="" width="172" height="225"></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Étude</span>
+                      <span class="mega__text">Faisabilité, diagnostics, dossiers réglementaires</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Du diagnostic au chantier</p>
+                <p class="mega__aside-text">Une même équipe vous accompagne à chaque étape, pour les collectivités comme pour le privé.</p>
+                <a href="#" class="btn btn--orange">Nous contacter</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="references.html" class="nav__link">Références</a></li>
+
+          <li class="nav__item nav__item--menu nav__item--mega">
+            <button type="button" class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-socama">
+              Socama
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="mega mega--compact" id="menu-socama">
+              <ul class="mega__list mega__list--2">
+                <li>
+                  <a href="socama.html" class="mega__link" style="--domain-color: var(--color-blue)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Le groupe SOCAMA</span>
+                      <span class="mega__text">Notre histoire, nos valeurs, notre équipe</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nos-agences.html" class="mega__link" style="--domain-color: var(--color-green)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Nos agences</span>
+                      <span class="mega__text">Au plus près de vos projets</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ef-etudes.html" class="mega__link" style="--domain-color: var(--color-yellow)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">EF Études et agence</span>
+                      <span class="mega__text">Notre agence partenaire</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="engagement-rse.html" class="mega__link" style="--domain-color: var(--color-orange)">
+                    <span class="mega__icon"><span class="mega__pill" aria-hidden="true"></span></span>
+                    <span class="mega__label">
+                      <span class="mega__title">Engagement / RSE</span>
+                      <span class="mega__text">Nos engagements responsables</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="mega__aside">
+                <p class="mega__aside-title">Plus de 60 ans d’ingénierie indépendante</p>
+                <p class="mega__aside-text">Une équipe pluridisciplinaire, au plus près des territoires.</p>
+                <a href="socama.html" class="btn btn--orange">Découvrir le groupe</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="carrieres.html" class="nav__link">Carrières</a></li>
+          <li><a href="socamag.html" class="nav__link is-active" aria-current="page">Soca’mag</a></li>
+        </ul>
+        <a href="#" class="btn btn--orange">Contact</a>
+
+        <!-- Coordonnées : visibles seulement dans le menu mobile -->
+        <div class="nav__infos">
+          <a href="tel:+33556340853" class="nav__info">05 56 34 08 53</a>
+          <a href="mailto:socama@socama.fr" class="nav__info">socama@socama.fr</a>
+          <a href="#" class="nav__social" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <span class="header__progress" aria-hidden="true"></span>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO DU MAGAZINE : 3 "couvertures" en éventail
+         ========================================================= -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+
+        <div class="page-hero__content">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Soca’mag</span>
+          </nav>
+
+          <h1 class="page-hero__title">
+            Soca’mag,<br>
+            <span class="hero__highlight">nos métiers</span> au fil de l’eau
+          </h1>
+
+          <p class="page-hero__lead">
+            Chantiers, vie de l’entreprise et dossiers d’expertise : l’actualité de SOCAMA
+            et des territoires que nous accompagnons.
+          </p>
+
+          <a href="#articles" class="btn btn--orange btn--large page-hero__btn">Lire les articles</a>
+        </div>
+
+        <!-- Visuel : 3 aperçus d'articles empilés (style coupures de journal).
+             Décoratif : les vrais liens sont dans la liste plus bas. -->
+        <div class="page-hero__visual page-hero__visual--mag" aria-hidden="true">
+          <!-- Symbole SOCAMA en filigrane derrière les cartes -->
+          <img class="mag-watermark" src="images/icone-socama.svg" alt="" width="57" height="50">
+          <div class="mag-cover mag-cover--1">
+            <img class="mag-cover__img" src="images/references/uzerche.jpg" alt="" width="986" height="538">
+            <span class="mag-cover__cat">Chantiers</span>
+            <span class="mag-cover__title">Continuité écologique : le seuil de Casseuil</span>
+            <span class="mag-cover__lines"><span></span><span></span><span></span></span>
+          </div>
+          <div class="mag-cover mag-cover--2">
+            <img class="mag-cover__img" src="images/domaines/paysage-jardin.jpg" alt="" width="700" height="700">
+            <span class="mag-cover__cat mag-cover__cat--vert">Vie de l’entreprise</span>
+            <span class="mag-cover__title">Paysages : SOCAMA complète son offre</span>
+            <span class="mag-cover__lines"><span></span><span></span><span></span></span>
+          </div>
+          <div class="mag-cover mag-cover--3">
+            <img class="mag-cover__img" src="images/socamag/laveau/laveau-04.jpg" alt="" width="692" height="520">
+            <span class="mag-cover__cat">Chantiers · À la une</span>
+            <span class="mag-cover__title">Réhabilitation du réservoir de Laveau</span>
+            <span class="mag-cover__meta">6 août 2021 · 4 min de lecture</span>
+            <span class="mag-cover__lines"><span></span><span></span><span></span><span></span></span>
+          </div>
+          <p class="mag-badge">Soca’mag</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         À LA UNE (même composant que les références en chiffres)
+         ========================================================= -->
+    <section class="mag-featured">
+      <div class="container">
+        <a href="article-reservoir-laveau.html" class="ref-highlight ref-highlight--link reveal" style="--domain-color: var(--color-orange)">
+          <figure class="ref-highlight__photo">
+            <img src="images/socamag/laveau/laveau-04.jpg" alt="" width="692" height="520">
+          </figure>
+          <div class="ref-highlight__content">
+            <p class="ref-highlight__label">À la une · Chantiers</p>
+            <h2 class="ref-highlight__title">Réhabilitation du réservoir de Laveau à Saint-Médard-de-Guizières</h2>
+            <p class="ref-highlight__text">Étanchéité, canalisations en inox, sécurité : un réservoir d’eau potable de 250 m³ remis à neuf, quatre ans après notre étude diagnostique.</p>
+            <p class="mag-featured__meta">6 août 2021 · 4 min de lecture</p>
+            <span class="ref-highlight__link">Lire l’article</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         TOUS LES ARTICLES, filtrables par catégorie
+         (même JS que la page Références : [data-references], .ref-filter,
+         .references__item[data-domain] ; lien direct : socamag.html?domaine=chantiers)
+         ⚠ Seul l'article "Laveau" a sa page : les autres liens sont à créer.
+         ========================================================= -->
+    <section class="references mag-list" id="articles" data-references>
+      <div class="container">
+
+        <div class="references__head">
+          <h2 class="section-title">Tous les <span class="text-orange">articles</span></h2>
+          <p class="references__count" aria-live="polite"><strong data-ref-count>12</strong> articles</p>
+        </div>
+
+        <ul class="ref-filters" aria-label="Filtrer par catégorie">
+            <li><button type="button" class="ref-filter is-active" data-filter="all" aria-pressed="true">Tous <span class="ref-filter__count">12</span></button></li>
+            <li><button type="button" class="ref-filter" data-filter="chantiers" aria-pressed="false">Chantiers <span class="ref-filter__count">5</span></button></li>
+            <li><button type="button" class="ref-filter" data-filter="entreprise" aria-pressed="false">Vie de l’entreprise <span class="ref-filter__count">4</span></button></li>
+            <li><button type="button" class="ref-filter" data-filter="expertise" aria-pressed="false">Expertise <span class="ref-filter__count">3</span></button></li>
+        </ul>
+
+        <ul class="article-list mag-list__grid">
+          <li class="references__item" data-domain="chantiers">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/references/smde24.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--chantiers">Chantiers · 14 sept. 2022</span>
+                <h3 class="article-card__title">Agence de Marsac-sur-l’Isle : les projets en cours</h3>
+                <p class="article-card__excerpt">En Dordogne, réseaux et ouvrages d’eau potable se modernisent avec le soutien de l’Agence de l’eau Adour-Garonne.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">3 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="chantiers">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/domaines/vrd-centre-bourg.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--chantiers">Chantiers · 24 janv. 2022</span>
+                <h3 class="article-card__title">Sainte-Florine : la rue de Belgique et la place Gigante se transforment</h3>
+                <p class="article-card__excerpt">Visite de chantier avec les élus sur l’aménagement de la rue et de la place, en plein cœur de la commune.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">3 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="chantiers">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/references/uzerche.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--chantiers">Chantiers · 28 janv. 2021</span>
+                <h3 class="article-card__title">Continuité écologique : le seuil de Casseuil sur le Dropt</h3>
+                <p class="article-card__excerpt">Les travaux de restauration de la continuité écologique du seuil sont achevés, en vidéo.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="entreprise">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/missions/etude-hero.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--entreprise">Vie de l’entreprise · 4 déc. 2020</span>
+                <h3 class="article-card__title">Huit nouvelles qualifications OPQIBI</h3>
+                <p class="article-card__excerpt">Ingénierie des rivières et des milieux aquatiques : nos compétences s’élargissent pour mieux vous accompagner.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="entreprise">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/valeurs/proximite-village.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--entreprise">Vie de l’entreprise · 27 nov. 2020</span>
+                <h3 class="article-card__title">SOCAMA certifiée ISO 14001</h3>
+                <p class="article-card__excerpt">Après l’ISO 9001, la certification environnementale pour nos activités de conception et d’ingénierie, dans toutes nos agences.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="chantiers">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/domaines/reseaux-eclairage.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--chantiers">Chantiers · 21 août 2020</span>
+                <h3 class="article-card__title">Noailhac : l’église Saint-Pierre-ès-Liens mise en lumière</h3>
+                <p class="article-card__excerpt">Un éclairage LED nocturne pour valoriser l’église, après sa restauration.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="entreprise">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/domaines/paysage-jardin.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--entreprise">Vie de l’entreprise · 11 août 2020</span>
+                <h3 class="article-card__title">Paysages : SOCAMA complète son offre</h3>
+                <p class="article-card__excerpt">Un cabinet de paysagistes rejoint nos équipes : la conception paysagère fait désormais partie de nos métiers.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">3 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="chantiers">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/references/saint-cere.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--chantiers">Chantiers · 9 mars 2020</span>
+                <h3 class="article-card__title">Première pierre de la station d’épuration de Terrasson</h3>
+                <p class="article-card__excerpt">Les élus ont posé la première pierre de la future station de traitement des eaux usées.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="entreprise">
+            <a href="#" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/ef-etudes/vallee.jpg" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--entreprise">Vie de l’entreprise · 3 janv. 2019</span>
+                <h3 class="article-card__title">SOCAMA s’agrandit avec EF Études</h3>
+                <p class="article-card__excerpt">EF Études devient notre filiale : une vingtaine de collaborateurs et six sites supplémentaires dans l’Ouest.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">2 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="expertise">
+            <a href="article-impact-environnemental.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/impact-environnemental.png" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--expertise">Expertise</span>
+                <h3 class="article-card__title">Mesurer pour mieux maîtriser l’impact environnemental des projets</h3>
+                <p class="article-card__excerpt">État initial, suivi de chantier, contrôle après travaux : observer le milieu à chaque étape, c’est la meilleure façon de limiter l’empreinte d’un projet.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">4 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="expertise">
+            <a href="article-genie-ecologique.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/genie-ecologique.png" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--expertise">Expertise</span>
+                <h3 class="article-card__title">Analyse des milieux et génie écologique</h3>
+                <p class="article-card__excerpt">Comprendre un cours d’eau ou une zone humide avant d’agir, puis travailler avec le vivant : c’est le principe du génie écologique.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">4 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="references__item" data-domain="expertise">
+            <a href="article-zones-littorales.html" class="article-card">
+              <span class="article-card__photo">
+                <img src="images/socamag/zones-littorales.png" alt="" loading="lazy">
+              </span>
+              <div class="article-card__body">
+                <span class="article-card__meta article-card__meta--expertise">Expertise</span>
+                <h3 class="article-card__title">Littoral et estuaires : s’adapter à la montée du niveau de la mer</h3>
+                <p class="article-card__excerpt">Le niveau de la mer monte de plus en plus vite. Sur l’estuaire de la Gironde, les ouvrages hydrauliques sont en première ligne.</p>
+                <span class="article-card__footer">
+                  <span class="article-card__time">5 min</span>
+                  <span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14 14 4m0 0H6m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         SUIVRE SOCAMA SUR LINKEDIN
+         ========================================================= -->
+    <section class="network mag-follow">
+      <div class="container network__inner reveal">
+        <div>
+          <h2 class="section-title">Suivez-nous <span class="text-orange">sur LinkedIn</span></h2>
+          <p class="network__text">Nos actualités, nos chantiers et nos offres d’emploi, au fil de l’eau.</p>
+        </div>
+        <a href="#" class="btn btn--orange btn--large">Suivre SOCAMA</a>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       ========================================================= -->
+  <footer class="footer">
+    <span class="footer__pill footer__pill--vert" aria-hidden="true"></span>
+    <span class="footer__pill footer__pill--jaune" aria-hidden="true"></span>
+
+    <div class="container">
+
+      <div class="footer__cta">
+        <p class="footer__cta-title">
+          Un projet ? Une question ?<br>
+          <span class="text-yellow">Parlons-en.</span>
+        </p>
+        <div class="footer__cta-actions">
+          <a href="#" class="btn btn--orange btn--large">Contactez-nous</a>
+          <a href="carrieres.html" class="btn btn--outline btn--large">Rejoindre l’équipe</a>
+        </div>
+      </div>
+
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo" aria-label="SOCAMA Ingénierie – Accueil">
+            <img src="images/logo-socama.svg" alt="SOCAMA Ingénierie" width="287" height="45">
+          </a>
+          <p class="footer__tagline">Des solutions durables pour l’eau et l’environnement.<br>L’ingénierie de proximité depuis 1979.</p>
+
+          <ul class="footer__certifs">
+            <li><img src="images/logos/opqibi.png" alt="OPQIBI – L’ingénierie qualifiée" width="177" height="65"></li>
+            <li><img src="images/logos/afaq-iso-14001.png" alt="AFAQ ISO 14001 Environnement" width="74" height="68"></li>
+            <li><img src="images/logos/afaq-iso-9001.png" alt="AFAQ ISO 9001 Qualité" width="74" height="69"></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="SOCAMA">
+          <p class="footer__heading">SOCAMA</p>
+          <ul class="footer__links">
+            <li><a href="eau-potable.html">Domaines</a></li>
+            <li><a href="maitrise-oeuvre.html">Missions</a></li>
+            <li><a href="references.html">Références</a></li>
+            <li><a href="socama.html">Socama</a></li>
+            <li><a href="carrieres.html">Carrières</a></li>
+            <li><a href="socamag.html">Soca’mag</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos domaines">
+          <p class="footer__heading">Nos domaines</p>
+          <ul class="footer__links">
+            <li><a href="milieux-aquatiques.html">Milieux aquatiques et continuité écologique</a></li>
+            <li><a href="eaux-pluviales.html">Gestion et maîtrise des eaux pluviales</a></li>
+            <li><a href="paysages-vrd.html">Paysages &amp; VRD</a></li>
+            <li><a href="assainissement.html">Assainissement</a></li>
+            <li><a href="eau-potable.html">Eau potable</a></li>
+            <li><a href="electrification-eclairage.html">Électrification et éclairage public</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Nos missions">
+          <p class="footer__heading">Nos missions</p>
+          <ul class="footer__links">
+            <li><a href="etude.html">Étude</a></li>
+            <li><a href="maitrise-oeuvre.html">Maîtrise d’œuvre</a></li>
+            <li><a href="assistance-maitrise-ouvrage.html">Assistance à maîtrise d’ouvrage</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 SOCAMA Ingénierie. Tous droits réservés.</p>
+
+        <ul class="footer__legal">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Plan du site</a></li>
+        </ul>
+
+        <div class="footer__social">
+          <a href="#" class="footer__icon-btn" aria-label="SOCAMA Ingénierie sur LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.84v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg>
+          </a>
+          <a href="#" class="footer__icon-btn" aria-label="Retour en haut de la page">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4m0 0-5 5m5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
